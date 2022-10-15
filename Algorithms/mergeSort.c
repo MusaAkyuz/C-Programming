@@ -107,13 +107,6 @@ void mergeDivide(int arr[], int l, int m, int r)
         j += 1;
         k += 1;
 	}
-        
-			
-	printf("\n Array : ");
-	index=0;
-	for (index = 0; index < sizeof(arr)/sizeof(arr[0]); index++){
-		printf("%d ", arr[index]);
-	}
 }
 
 void mergeSort(int arr[], int l, int r) 
