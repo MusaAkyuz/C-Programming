@@ -40,22 +40,12 @@ void mergeDivide(int arr[], int l, int m, int r)
 		left[i] = arr[l + i];
 		//printf("\nleft[%d] : %d", i, left[i]);
 	}
-	printf("\n Left array : ");
-	int index=0;
-	for (index = 0; index < leftArrayLen; index++){
-		printf("%d ", left[index]);
-	}
 	
 	int j;
 	for(j = 0; j < rightArrayLen; j++) 
 	{
 		right[j] = arr[m + j + 1];
 		//printf("\nright[%d] : %d", j, right[j]);
-	}
-	printf("\n Right array : ");
-	index=0;
-	for (index = 0; index < rightArrayLen; index++){
-		printf("%d ", right[index]);
 	}
 	
 	// adding last to infinity
@@ -65,20 +55,6 @@ void mergeDivide(int arr[], int l, int m, int r)
 	i = 0;
 	j = 0;
 	int k = l;
-//	for(k = l; k < r; k++) 
-//	{
-//		if (left[i] <= right[i])
-//		{
-//			arr[k] = left[i];
-//			i++;
-//		}
-//		else
-//		{
-//			arr[k] = right[j];
-//			j++;
-//		}
-//	}
-
     while (i < leftArrayLen && j < rightArrayLen) {
     	if (left[i] <= right[j]){
     		arr[k] = left[i];
@@ -92,16 +68,14 @@ void mergeDivide(int arr[], int l, int m, int r)
         k += 1;
 	}
         
-
-    while (i < leftArrayLen)
+    while (i < leftArrayLen + 1)
     {
         arr[k] = left[i];
         i += 1;
         k += 1;
 	}
  
-
-    while (j < rightArrayLen)
+    while (j < rightArrayLen + 1)
     {
     	arr[k] = right[j];
         j += 1;
@@ -111,6 +85,12 @@ void mergeDivide(int arr[], int l, int m, int r)
 
 void mergeSort(int arr[], int l, int r) 
 {
+	int a;
+	printf("\n");
+	for(a = 0; a < sizeof(arr)/sizeof(int); a++)
+	{
+		printf("%d ", arr[a]);
+	}
 	//printf("\nl : %d   r : %d");
 	if (l < r)
 	{
