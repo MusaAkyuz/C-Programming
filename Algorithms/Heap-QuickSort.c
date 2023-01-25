@@ -3,7 +3,7 @@
 #include <time.h>
 #include <limits.h>
 
-#define ARRAYSIZE 100
+#define ARRAYSIZE 100000
 
 typedef struct Heap
 {
@@ -71,15 +71,16 @@ int main()
     printf("Toplam gecen sure (Yigin Siralama): %f saniyedir.\n", cpu_time_used);
     
     start_t = clock();
-    QUICKSORT(A4,0,ARRAYSIZE-1);
+    QUICKSORT(A1,0,ARRAYSIZE-1);
     end_t = clock();
     cpu_time_used = (double)(end_t - start_t) / CLOCKS_PER_SEC;
     printf("Toplam gecen sure (Hizli Siralama): %f saniyedir.\n", cpu_time_used);
 
-    for(i = 0; i < ARRAYSIZE; i++)
+    /*for(i = 0; i < ARRAYSIZE; i++)
     {
         printf("%d: %d\n", i+1, A4[i]);
     }
+    */
 
     return 0;
 }
